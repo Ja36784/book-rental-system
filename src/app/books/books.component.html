@@ -1,0 +1,48 @@
+<div>
+  <h2>Sistema de Locação de Livros</h2>
+
+  <!-- Formulário para adicionar novo livro -->
+  <form (ngSubmit)="addBook()">
+    <input [(ngModel)]="newBook.title" placeholder="Título" name="title" required />
+    <input [(ngModel)]="newBook.author" placeholder="Autor" name="author" required />
+    <input [(ngModel)]="newBook.gender" placeholder="Gênero" name="gender" />
+    <button type="submit">Adicionar Livro</button>
+  </form>
+
+  <!-- Lista de Livros -->
+  <ul>
+    <li *ngFor="let book of books">
+      <!-- Exibição de livro ou campos de edição -->
+      <div *ngIf="editBook?.id !== book.id; else editTemplate">
+        <h3>
+          {{ book.title }}
+          <span *ngIf="!book.available" [ngClass]="'unavailable'">(Indisponível)</span>
+        </h3>
+        
+        <p>Autor: {{ book.author }}</p>
+        <p>Gênero: {{ book.gender }}</p>
+        <p>Status: {{ book.available ? 'Disponível' : 'Locado' }}</p>
+
+        <button (click)="toggleAvailability(book.id)">
+          {{ book.available ? 'Locar' : 'Devolver' }}
+        </button>
+        <button (click)="startEdit(book)">Editar</button>
+        <button (click)="deleteBook(book.id)">Remover</button>
+      </div>
+
+      <!-- Template de edição -->
+      <ng-template #editTemplate>
+        <div *ngIf="editBook">
+          <h3>Editando: {{ editBook.title }}</h3>
+          <input [(ngModel)]="editBook.title" placeholder="Título" name="editTitle" required />
+          <input [(ngModel)]="editBook.author" placeholder="Autor" name="editAuthor" required />
+          <input [(ngModel)]="editBook.gender" placeholder="Gênero" name="editGender" />
+
+          <button (click)="saveEdit()">Salvar</button>
+          <button (click)="cancelEdit()">Cancelar</button>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+</div>
+      

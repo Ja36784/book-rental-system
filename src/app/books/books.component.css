@@ -1,0 +1,144 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Container principal */
+div {
+  max-width: 800px;
+  margin: auto;
+  background-color: #DCDCDC;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulário de adicionar novo livro */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+form input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dcdfe3;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #219150;
+}
+
+.unavailable {
+  color: #e74c3c; /* Escolha a cor desejada, como vermelho para indicar indisponibilidade */
+  font-weight: bold;
+}
+
+
+/* Lista de livros */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fafbfc;
+  border: 1px solid #dcdfe3;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  position: relative;
+}
+
+li h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #34495e;
+}
+
+li p {
+  margin: 5px 0;
+  color: #34495e;
+}
+
+/* Botões de ação */
+li button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+li button:hover {
+  background-color: #2471a3;
+}
+
+li button:last-child {
+  background-color: #c0392b;
+}
+
+li button:last-child:hover {
+  background-color: #a93226;
+}
+
+/* Template de edição */
+h3.editing-title {
+  color: #e67e22;
+}
+
+.edit-template input[type="text"] {
+  width: calc(100% - 24px);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #dcdfe3;
+  border-radius: 4px;
+}
+
+.edit-template button {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.edit-template button:first-child {
+  background-color: #27ae60;
+}
+
+.edit-template button:first-child:hover {
+  background-color: #219150;
+}
+
+.edit-template button:last-child {
+  background-color: #e67e22;
+}
+
+.edit-template button:last-child:hover {
+  background-color: #ca6c1b;
+}
