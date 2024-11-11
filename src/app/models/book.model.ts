@@ -5,5 +5,5 @@ export interface Book {
     author: string;
     gender: string;
     available: boolean;
-    
+    image?: string;    
   }

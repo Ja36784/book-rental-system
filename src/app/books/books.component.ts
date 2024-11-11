@@ -17,6 +17,7 @@ export class BooksComponent implements OnInit {
     author: '',
     gender: '',
     available: true,
+    
   };
   
   editBook: Book | null = null; // Armazena o livro que está sendo editado
@@ -41,6 +42,7 @@ export class BooksComponent implements OnInit {
         author: '',
         gender: '',
         available: true,
+       
       };
     }
   }

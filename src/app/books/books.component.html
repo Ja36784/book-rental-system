@@ -5,7 +5,7 @@
   <form (ngSubmit)="addBook()">
     <input [(ngModel)]="newBook.title" placeholder="Título" name="title" required />
     <input [(ngModel)]="newBook.author" placeholder="Autor" name="author" required />
-    <input [(ngModel)]="newBook.gender" placeholder="Gênero" name="gender" />
+    <input [(ngModel)]="newBook.gender" placeholder="Gênero" name="gender" required/>
     <button type="submit">Adicionar Livro</button>
   </form>
 
@@ -18,10 +18,14 @@
           {{ book.title }}
           <span *ngIf="!book.available" [ngClass]="'unavailable'">(Indisponível)</span>
         </h3>
-        
+
+         <!-- Adicione a imagem do livro aqui -->
+         <img *ngIf="book.image" [src]="book.image" alt="{{ book.title }}" width="70" height="100">
+     
         <p>Autor: {{ book.author }}</p>
         <p>Gênero: {{ book.gender }}</p>
-        <p>Status: {{ book.available ? 'Disponível' : 'Locado' }}</p>
+        
+        <p>Status: {{ book.available ? 'Disponível' : 'Locado' }}</p>       
 
         <button (click)="toggleAvailability(book.id)">
           {{ book.available ? 'Locar' : 'Devolver' }}
@@ -36,7 +40,13 @@
           <h3>Editando: {{ editBook.title }}</h3>
           <input [(ngModel)]="editBook.title" placeholder="Título" name="editTitle" required />
           <input [(ngModel)]="editBook.author" placeholder="Autor" name="editAuthor" required />
-          <input [(ngModel)]="editBook.gender" placeholder="Gênero" name="editGender" />
+          <input [(ngModel)]="editBook.gender" placeholder="Gênero" name="editGender" required />
+
+          <!-- Campo para editar a URL da imagem -->
+          <input [(ngModel)]="editBook.image" placeholder="URL da Imagem" name="editImage" />
+          <img *ngIf="editBook.image" [src]="editBook.image" alt="{{ editBook.title }}" width="100" height="150">
+
+
 
           <button (click)="saveEdit()">Salvar</button>
           <button (click)="cancelEdit()">Cancelar</button>
