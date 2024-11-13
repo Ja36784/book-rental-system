@@ -27,7 +27,7 @@ export class BookService {
       author: 'Agatha Christie', 
       gender: 'Mistério', 
       available: true, 
-      image: 'assets/images/QuemMatouOAlmirante.jpeg'
+      image: 'assets/images/QuemMatouOAlmirante1.jpeg'
     },
     { id: 4, 
       title: 'A Ilustre Casa de Ramires', 

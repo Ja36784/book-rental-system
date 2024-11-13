@@ -1,146 +1,180 @@
-
-
-/* Estilo geral */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-h2 {
-  color: #2c3e50;
-  text-align: center;
-  margin: 20px 0;
-}
-
-/* Container principal */
-div {
+/* Contêiner geral */
+.book-container {
   max-width: 800px;
-  margin: auto;
-  background-color: #DCDCDC;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 8px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-/* Formulário de adicionar novo livro */
-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.book-container h2 {
+  text-align: center;
+  color: #333;
   margin-bottom: 20px;
-  align-items: center;
 }
 
-form input[type="text"] {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #dcdfe3;
-  border-radius: 4px;
+/* Formulário de adição de livro */
+.book-form {
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
 }
 
-form button {
-  background-color: #27ae60;
+.book-form h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.book-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.add-button {
+  background-color: #4caf50;
   color: white;
+  padding: 10px 20px;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 10px;
 }
 
-form button:hover {
-  background-color: #219150;
+.add-button:hover {
+  background-color: #45a049;
 }
-
-.unavailable {
-  color: #e74c3c; /* Escolha a cor desejada, como vermelho para indicar indisponibilidade */
-  font-weight: bold;
-}
-
 
 /* Lista de livros */
-ul {
+.book-list {
   list-style: none;
   padding: 0;
 }
 
-li {
-  background-color: #fafbfc;
-  border: 1px solid #dcdfe3;
-  padding: 16px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  position: relative;
+.book-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-li h3 {
-  font-size: 18px;
+.book-info {
+  display: flex;
+  flex: 1;
+}
+
+/* Imagem do livro */
+.book-image {
+  width: 100px;
+  height: 150px;
+  margin-right: 15px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* Detalhes do livro */
+.book-details {
+  flex: 1;
+}
+
+.book-details h3 {
+  color: #333;
+  font-size: 1.2em;
   margin: 0;
-  color: #34495e;
 }
 
-li p {
+.book-details p {
   margin: 5px 0;
-  color: #34495e;
+  color: #666;
+}
+
+.unavailable {
+  color: #e74c3c;
+  font-weight: bold;
 }
 
 /* Botões de ação */
-li button {
-  background-color: #2980b9;
+.book-actions, .edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-button, .add-button, .save-button {
+  background-color: #4caf50;
   color: white;
+  padding: 8px 16px;
   border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-right: 8px;
-  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
-li button:hover {
-  background-color: #2471a3;
+.action-button:hover, .save-button:hover {
+  background-color: #45a049;
 }
 
-li button:last-child {
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
   background-color: #c0392b;
 }
 
-li button:last-child:hover {
-  background-color: #a93226;
+.cancel-button {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Template de edição */
-h3.editing-title {
-  color: #e67e22;
+.cancel-button:hover {
+  background-color: #b3b3b3;
 }
 
-.edit-template input[type="text"] {
-  width: calc(100% - 24px);
-  padding: 8px 12px;
+/* Estilos para o formulário de edição */
+.edit-form input {
+  width: 100%;
+  padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #dcdfe3;
-  border-radius: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.edit-template button {
-  padding: 8px 12px;
-  font-size: 14px;
+.edit-form h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.edit-template button:first-child {
-  background-color: #27ae60;
+/* Status de disponibilidade */
+.status-available {
+  color: #007bff; /* Azul */
+  font-weight: bold;
 }
 
-.edit-template button:first-child:hover {
-  background-color: #219150;
-}
-
-.edit-template button:last-child {
-  background-color: #e67e22;
-}
-
-.edit-template button:last-child:hover {
-  background-color: #ca6c1b;
+.status-located {
+  color: #ffc107; /* Amarelo */
+  font-weight: bold;
 }
